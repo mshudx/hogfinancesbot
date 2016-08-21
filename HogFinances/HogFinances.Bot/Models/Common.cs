@@ -9,6 +9,8 @@ namespace HogFinances.Bot.Models
     {
         private static Random random = new Random();
 
+        public const string GoodbyeResult = "goodbye";
+
         public static readonly List<string> WhatNextLines = new List<string>
         {
             "What else can I do for you today?",

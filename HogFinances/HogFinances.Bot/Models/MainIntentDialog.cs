@@ -26,5 +26,11 @@ namespace HogFinances.Bot.Models
             await context.PostAsync("Your current balance is 3215 dollars.");
             context.Done(new object());
         }
+
+        [LuisIntent("goodbye")]
+        public async Task Goodbye(IDialogContext context, LuisResult result)
+        {
+            context.Done(Common.GoodbyeResult);
+        }
     }
 }
