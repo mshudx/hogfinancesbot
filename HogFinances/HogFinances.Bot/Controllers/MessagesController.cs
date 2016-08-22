@@ -23,7 +23,7 @@ namespace HogFinances.Bot
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new WelcomeDialog());
+                await Conversation.SendAsync(activity, () => new RootDialog());
             }
             else
             {

@@ -11,7 +11,7 @@ using System.Threading;
 namespace HogFinances.Bot.Models
 {
     [Serializable]
-    public class WelcomeDialog : IDialog<object>
+    public class RootDialog : IDialog<object>
     {
         private bool hasUserSaidHi = false;
 
@@ -49,7 +49,7 @@ namespace HogFinances.Bot.Models
             }
             else
             {
-                await context.PostAsync("Thank you for contacting Hog Finances! Message me any time if you need something else!");
+                await context.PostAsync("Goodbye, and thank you for contacting Hog Finances! Message me any time if you need something else!");
                 hasUserSaidHi = false;
                 context.Done(new object());
             }

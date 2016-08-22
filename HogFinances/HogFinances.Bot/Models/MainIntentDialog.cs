@@ -1,9 +1,11 @@
 ﻿using Microsoft.Bot.Builder.Dialogs;
+using Microsoft.Bot.Builder.FormFlow;
 using Microsoft.Bot.Builder.Luis;
 using Microsoft.Bot.Builder.Luis.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 
@@ -24,6 +26,18 @@ namespace HogFinances.Bot.Models
         public async Task GetBalance(IDialogContext context, LuisResult result)
         {
             await context.PostAsync("Your current balance is 3215 dollars.");
+            context.Done(new object());
+        }
+
+        [LuisIntent("sendMoney")]
+        public async Task SendMoney(IDialogContext context, LuisResult result)
+        {
+            context.Call(FormDialog.FromForm(SendMoneyParameters.BuildForm, FormOptions.PromptInStart), SendMoneyCompleted);
+        }
+
+        public async Task SendMoneyCompleted(IDialogContext context, IAwaitable<object> result)
+        {
+            await context.PostAsync("Thank you! Your order will be processed within 2 hours.");
             context.Done(new object());
         }
 

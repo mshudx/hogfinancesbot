@@ -125,7 +125,8 @@
     </Compile>
     <Compile Include="Models\Common.cs" />
     <Compile Include="Models\MainIntentDialog.cs" />
-    <Compile Include="Models\WelcomeDialog.cs" />
+    <Compile Include="Models\SendMoneyParameters.cs" />
+    <Compile Include="Models\RootDialog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
