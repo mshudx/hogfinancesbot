@@ -11,6 +11,7 @@ using System.Web;
 
 namespace HogFinances.Bot.Models
 {
+    // You can find the definition for the LUIS.ai bot in the !LuisDefinitions folder
     [LuisModel("0c94c090-58b0-436c-824c-355f6c7fe89f", "1eb6e206c13d4735ba42a35b5926d3e4")]
     [Serializable]
     public class MainIntentDialog : LuisDialog<object>
